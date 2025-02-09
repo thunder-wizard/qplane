@@ -1,0 +1,14 @@
+#!/bin/bash
+# FILENAME:  QPlane.sub
+
+module load anaconda/2020.11-py38
+module load cuda/11.2.0
+module load cudnn/cuda-11.2_8.1
+source activate GPU
+
+host=`hostname -s`
+
+echo $CUDA_VISIBLE_DEVICES
+
+# Run on the first available GPU
+python QPlane.py
